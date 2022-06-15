@@ -64,15 +64,15 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    <label for="name">Second Participant*</label>
-                    <input type="text" name="name2" id="name2" placeholder="Second Participant" value="{{ old('name2') }}" required><br>
+                    <label for="name">Second Participant (Optional)</label>
+                    <input type="text" name="name2" id="name2" placeholder="Second Participant" value="{{ old('name2') }}"><br>
                     @error('name2')
                         <span class="text-danger" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    <label for="name">Third Participant*</label>
-                    <input type="text" name="name3" id="name3" placeholder="Third Participant" value="{{ old('name3') }}" required><br>
+                    <label for="name">Third Participant (Optional)</label>
+                    <input type="text" name="name3" id="name3" placeholder="Third Participant" value="{{ old('name3') }}"><br>
                     @error('name3')
                         <span class="text-danger" role="alert">
                             <strong>{{ $message }}</strong>

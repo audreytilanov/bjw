@@ -159,8 +159,6 @@ class MenuController extends Controller
         $request->validate([
             'group' => 'required',
             'name1' => 'required',
-            'name2' => 'required',
-            'name3' => 'required',
             'email'=> 'required|email|unique:videos,email',
             'phone'=> 'required',
             'institution'=> 'required',
