@@ -1,0 +1,138 @@
+@extends('layout.admin')
+@section('section')
+<div class="content-wrap">
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 p-r-0 title-margin-right">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h1><b>Videos</b>, <span>Master Data</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+                <div class="col-lg-4 p-l-0 title-margin-left">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Videos</li>
+                            </ol>
+                        </div>
+                    </div>
+                    {{-- <a class="btn btn-primary btn-flat btn-addon float-right" href="{{ route('admin.categories.create') }}">
+                        <i class="ti-plus"></i>
+                        Tambah</a> --}}
+                </div>
+                <!-- /# column -->
+            </div>
+            <!-- /# row -->
+            <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="bootstrap-data-table-panel">
+                                <div class="table-responsive">
+                                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama Peserta</th>
+                                                <th>Nama Group</th>
+                                                <th>Email</th>
+                                                <th>No HP</th>
+                                                <th>Institusi</th>
+                                                <th>Bukti Pembayaran</th>
+                                                <th>KTM / KTP</th>
+                                                <th>Line</th>
+                                                <th>Status</th>
+                                                <th>Tanggal Dibuat</th>
+                                                <th>Tanggal Update</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ( $data as $datas )
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>
+                                                    @foreach ($datas->groups as $i => $item)
+                                                        {{ $i+1 }} | {{ $item->name }}<br>
+                                                    @endforeach
+                                                </td>
+                                                <td>{{ $datas->group_name }}</td>
+                                                <td>{{ $datas->email }}</td>
+                                                <td>{{ $datas->phone }}</td>
+                                                <td>{{ $datas->institution }}</td>
+                                                <td>
+                                                    <img src="{{ URL::asset('videos_asset/proof_of_payment/'.$datas->proof_of_payment) }}" alt="" width="100px">
+                                                    <form action="{{ route('admin.videos.pop', $datas->id) }}" method="POST">
+                                                        @csrf
+                                                        <input class="btn btn-primary" type="submit" name="submit" value="Download" id="submit">
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <img src="{{ URL::asset('videos_asset/ktm/'.$datas->ktm) }}" alt="" width="100px">
+                                                    <form action="{{ route('admin.videos.ktm', $datas->id) }}" method="POST">
+                                                        @csrf
+                                                        <input class="btn btn-primary" type="submit" name="submit" value="Download" id="submit">
+                                                    </form>
+                                                </td>
+                                                <td>{{ $datas->line }}</td>
+                                                <td>
+                                                    @if($datas->status == "pending")
+                                                        <div class="p-3 mb-2 bg-info text-white">PENDING</div>
+                                                    @elseif($datas->status == "accepted")
+                                                        <div class="p-3 mb-2 bg-success text-white">ACCEPTED</div>
+                                                    @elseif($datas->status == "declined")
+                                                        <div class="p-3 mb-2 bg-danger text-white">DECLINED</div>
+                                                    @elseif($datas->status == "deleted")
+                                                        <div class="p-3 mb-2 bg-dark text-white">DELETED</div>
+                                                    @endif
+                                                </td>
+                                                <td>{{ $datas->created_at }}</td>
+                                                <td>{{ $datas->updated_at }}</td>
+                                                <td>
+                                                    @if($datas->status == "pending")
+                                                        <form style="display: inline" action="{{ route('admin.videos.accept', $datas->id) }}" id="delete-form-verify{{ $datas->id }}" method="POST">
+                                                            @csrf
+                                                            <button value="{{ $datas->id }}" id="btn-submit-verify"  class="btn btn-success btn-flat btn-addon" type="submit">Accept</button>
+                                                        </form>
+                                                        <br>
+                                                        <br>
+                                                        <form style="display: inline" action="{{ route('admin.videos.decline', $datas->id) }}" id="delete-form-notverify{{ $datas->id }}" method="POST">
+                                                            @csrf
+                                                            <input type="text" name="alasan" id="alasan" required placeholder="Alasan">
+                                                            @error('alasan')
+                                                                <span class="text-danger" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                            @enderror
+                                                            <button value="{{ $datas->id }}" id="btn-submit-notverify"  class="btn btn-warning btn-flat btn-addon" type="submit">Decline</button>
+                                                        </form>
+                                                    @else
+                                                        <form style="display: inline" action="{{ route('admin.videos.delete', ['id' => $datas->id]) }}" method="post" id="delete-form{{ $datas->id }}">
+                                                            @csrf
+                                                            <button value="{{ $datas->id }}" id="btn-submit" class="btn btn-danger btn-flat btn-addon" type="submit">
+                                                                Delete</button>
+                                                        </form>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
+            </section>
+        </div>
+    </div>
+</div>
+@endsection

@@ -1,0 +1,709 @@
+/* ABOUT US */
+*{
+    margin: 0;
+    font-family: EB Garamond;
+}
+
+#loading {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #f5f7f6;
+  z-index: 99;
+}
+
+#loading-image {
+  z-index: 100;
+}
+
+#about{
+    height: 100%;
+    background: white url("../user/assets/Aset Latar/Latar\ 1-02.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    /* background-color: red; */
+}
+
+#about h2{
+    font-size: 40px;
+    padding-top: 50px;
+    /* margin-top: 10vh; */
+    color: rgba(78,148,79,255);
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+#about h3{
+    font-size: 40px;
+    /* margin-top: 10vh; */
+    color: rgba(78,148,79,255);
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+#about .header{
+    height: 35px;
+    width: 45%;
+    background-color: rgba(78,148,79,255);
+    position: absolute;
+    border-radius: 0 0 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.4);
+    left: 0; 
+    right: 0; 
+}
+
+#about .header a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.25s ease-out;
+    font-size: 18px;
+    margin: 0 15px 0 15px;
+}
+
+#about .header a:hover{
+    text-decoration: none;
+    color: rgb(248,198,78);
+    font-weight: bold;
+    transition: 0.25s ease-out;
+    font-size: 18px;
+    margin: 0 15px 0 15px;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(248,198,78);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#about h1{
+    font-size: 50px;
+    margin-top: 10px;
+    color: rgba(78,148,79,255);
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+#about #content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+#about #content .desc{
+    width: 40%;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: justify;
+}
+
+#about #content .teaser{
+    width: 40%;
+}
+
+#about #content .teaser img{
+    width:400px; 
+}
+
+.teaser .thumbnail img{
+    border-radius: 30px; 
+    box-shadow: 4px 2px 2px 2px rgba(0,0,0,0.4);
+    transition: 0.2s ease;
+    cursor:pointer;
+}
+
+.teaser .thumbnail img:hover{
+    box-shadow: 4px 2px 2px 2px rgba(30, 99, 13, 0.733);
+    transition: 0.2s ease;
+}
+
+
+@media (max-width: 1150px) {
+    #about #content{
+        flex-direction: column;
+    }
+
+    #about #content .desc{
+        width: 80%;
+    }
+
+    #about #content .teaser img{
+        width:500px; 
+    }
+    
+    #about #content .teaser{
+        width: 80%;
+        margin-top: 100px;
+    }
+
+    #about .header{
+        height: 35px;
+        width: 70%;
+    }
+}
+
+@media (max-width: 710px) {
+   
+    #about .header{
+        height: 35px;
+        width: 80%;
+    }
+
+    #about .header a{
+        font-size: 15px;
+    }
+    #about #content .teaser img{
+        width:400px; 
+    }
+}
+
+@media (max-width: 550px) {
+   
+    #about .header{
+        height: 35px;
+        width: 100%;
+    }
+    #about #content .teaser img{
+        width:300px; 
+    }
+
+    #about .header a{
+        font-size: 10px;
+    }
+
+    #about h1{
+        font-size: 30px;
+    }
+
+    
+}
+
+.bg-galeri{
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  /* background: url("../asset/umum/bg-merah.png"); */
+  background-size: cover;
+  background-attachment: fixed;
+  /* min-height: 100vh; */
+  width: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  /* align-content: center; */
+}
+
+#video-awal{
+  /* opacity: 0;
+  display: none;  */
+  /* transition: opacity 1s ease-in; */
+  /* height: 100%; */
+  /* background-image: url('../asset/umum/latar\ kuning-02.jpg'); */
+  background-size: cover;
+  background-position: center;
+}
+
+section h1.title{
+  margin-bottom: 1.75rem;
+  text-transform: uppercase;
+}
+
+.font-weight-normal{
+  font-weight: 400!important;
+}
+
+.sambutan p{
+  font-size: 20px;
+  color: #333;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.row-a{
+  margin-right: -30px;
+  margin-left: -30px;
+}
+
+.col-1 h3{
+  color: #000;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* Main Video Section Sambutan */
+#video-sambutan .card{
+  border-radius:20px;
+  border-top: 0;
+}
+
+.col-sm-12{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card-video{
+  box-shadow: 5px 5px 10px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width:2000px){ 
+  #video-sambutan .card-video {
+      width:480px !important;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1199.98px){ 
+  #video-sambutan .card-video {
+      width:400px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width:991.98px){ 
+  
+}
+@media only screen and (min-width: 576px) and (max-width:767.98px){ 
+  .col-sm-12{
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+  #logo-desc{
+      margin-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width:575.98px){ 
+  .container {
+      max-width:440px;
+  }
+  #desc-logo p{
+      font-size: 15px!important;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width:479.98px){ 
+  .container {
+      max-width:440px;
+  }
+
+  #desc-logo p{
+      font-size: 15px!important;
+  }
+  
+}
+
+#video-sambutan .card .title{
+  left: 0;
+}
+
+.overlay{
+  border-radius: 20px;
+  background-image: linear-gradient(to right top, rgba(0,0,0,0.3)12%, #6dee235b 88%);
+}
+
+.overlay, .overlay-black{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Button Venobox */
+.card-video{
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+.card-video:hover{
+  transform: scale(1.05);
+}
+#video-sambutan .play-btn{
+  background-color: #ee45235b;
+}
+
+.play-btn{
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  display: block;
+  top: calc(50% - 47px);
+  position: absolute;
+  overflow: hidden;
+  transition: all .3s cubic-bezier(.55, .055, .675, .19);
+}
+
+#video-sambutan .play-btn:hover{
+  transform: scale(1.8);
+}
+
+.play-btn:before{
+  content: "";
+  position: absolute;
+  width: 133px;
+  height: 133px;
+  animation-delay: 0s;
+  animation: pulse 1.5s 1s ease-out infinite;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  border-radius: 50%;
+  border: 10px solid #136f63d0;
+  top: -20%;
+  left: -20%;
+  background: rgba(198, 16, 0, 0);
+}
+
+.play-btn:hover::after{
+  animation: c 1s;
+}
+.play-btn:after{
+  content: "";
+  position: absolute;
+  left: 42%;
+  top: 35%;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 20px solid hsla(0,0%,100%,.919);
+  z-index: 90;
+  /* animation: pulse 2s ease-in-out infinite; */
+}
+
+
+@keyframes a{
+  100%{
+      transform: scale(2.5);
+      opacity: 0;
+  }
+}
+
+@keyframes pulse{
+  0%{
+      transform: scale(.1);       
+  }
+  100%{
+      transform: scale(2.5);
+      opacity: 0;
+  }
+}
+
+/* GALERIGALERIGALERI */
+#galeri h1{
+    font-size: 50px;
+    color: rgba(78,148,79,255);
+    font-weight: bolder;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 0!important;
+}
+
+#galeri{
+    background: white url("../user/assets/Aset Latar/latar\ 3-01.png") no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
+
+#bg-galeri{
+  
+  height: 100%;
+  width: 100%;
+}
+
+#galeri h2{
+  font-size: 40px;
+  padding-top: 50px;
+  /* margin-top: 10vh; */
+  color: rgba(78,148,79,255);
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+#img-wrap{
+  overflow: hidden;
+  width: 85%;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+.gridywrap div[class*=gridy] {
+    box-shadow: inset 0 0 0 1px #ddd;
+    padding: 15px; float: left;
+    position: relative;
+  }
+  .gridywrap .gridy-1,
+  .gridywrap .gridy-2,
+  .gridywrap .gridy-3 {width: 320px;
+    overflow: hidden;}
+  
+  .gridywrap .gridy-1 {width: 100%;}
+  .gridywrap .gridy-2 {width: 100%;}
+  .gridywrap .gridy-3 {width: 100%;}
+  
+  .gridywrap .gridyhe-1 {height: 320px;}
+  .gridywrap .gridyhe-2 {height: 320px;}
+  
+  
+  @media screen and (min-width: 640px) {
+    .gridywrap .gridyhe-2 {height: 320px;}
+    .gridywrap {
+      width: 100%;
+    }
+    .gridywrap .gridy-1 {width: 50%;}
+    .gridywrap .gridy-2 {width: 50%;}
+    .gridywrap .gridy-3 {width: 100%;}
+  }
+  @media screen and (min-width: 1024px) {
+    .gridywrap .gridy-1 {width: 33.3%;}
+    .gridywrap .gridy-2 {width: 66.6%;}
+    .gridywrap .gridy-3 {width: 100%;}
+    .gridywrap .gridyhe-2 {height: 640px;}
+  }
+  
+  /*styling*/
+  
+  .gridy-1, .gridy-2{
+      border: 4px solid transparent;
+  }
+  
+  .gridywrap .gridimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+  }
+  .gridywrap .gridimg img {
+    width: 100%;
+  }
+  .gridywrap .gridinfo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* background: rgba(0,0,0,0.4); */
+    text-align: center;
+    transition: all 0.8s;
+  }
+  .gridywrap .gridinfo h3 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 130px 0 20px;
+    position: relative;
+  }
+  .gridywrap .gridinfo h3:after {
+    content: '';
+    width: 25px;
+    /* border-top: 4px solid #fff; */
+    display: block;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+  .gridywrap .gridinfo .gridmeta {
+    transition-delay: 0.25s;
+  }
+  .gridywrap .gridinfo .gridmeta p {
+    display: inline-block;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  .gridywrap .gridinfo .gridmeta p i {
+    margin-right: 5px;
+  }
+  .gridywrap .gridinfo .gridmeta p.gridwho {
+    margin-left: 25px;
+  }
+  .gridywrap .gridinfo p.gridexerpt {
+    width: 60%;
+    margin: 0 auto;
+    line-height: 22px;
+    margin-bottom: 25px;
+    color: #fff;
+    transition-delay: 0.5s;
+  }
+  
+  .gridywrap .gridinfo * {
+    opacity: 0;
+    transition: all 0.8s;
+  }
+  .gridywrap .gridinfo h3 {
+    opacity: 1;
+  }
+  .gridywrap .gridinfo .grid-btn {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 25px;
+    border: 1px solid #fff; 
+    display: block;
+    overflow: hidden;
+  }
+  .gridywrap .gridinfo .grid-btn:hover {
+    width: 75px;
+    background: rgba(0,0,0,0.3);
+  }
+  .gridywrap .gridinfo .grid-btn span {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.8s;
+  }
+  .gridywrap .gridinfo .grid-btn:hover span {
+    opacity: 1;
+    display: inline;
+  }
+  .gridywrap .gridinfo .grid-btn:hover i {
+    opacity: 0;
+    display: none;
+  }
+  
+  .gridywrap .gridinfo:hover * {
+    opacity: 0.7;
+  }
+  .gridywrap .gridinfo:hover p {
+    opacity: 1;
+  }
+  .gridywrap .gridinfo:hover {
+    background: rgba(141, 113, 48, 0.582);
+  }
+  .gridywrap .gridinfo:hover h3 {
+    margin-top: 70px;
+    opacity: 1;
+  }
+
+
+#footer{
+  display: flex;
+  background: white url("../user/assets/Aset Latar/Latar\ 2-03.png") no-repeat center;
+  background-size: cover;
+  padding: 50px;
+  justify-content: space-between;
+}
+
+#footer .alamat{
+  height: 100%;
+}
+
+#footer .alamat .text{
+  padding: 20px;
+}
+
+#footer .alamat .text h4,
+#footer .alamat .text h5,
+#footer .alamat .text p
+{
+  font-weight: bold;
+}
+
+#footer .alamat .social{
+  display: flex;
+  justify-content: flex-start;
+  gap: 7px;
+}
+
+#footer .alamat .social i{ 
+  text-decoration: none!important; 
+  color: rgb(0, 0, 0);
+  transition: 0.2s ease;
+}
+
+#footer .alamat .social i:hover{ 
+  text-decoration: none!important; 
+  color: rgb(87, 84, 84);
+  transition: 0.2s ease;
+}
+
+
+#footer .kontak{
+  height: 100%;
+}
+
+#footer .kontak .form{
+  /* display: flex;
+  justify-content: space-evenly; */
+  padding: 10px 10px 10px 10px;
+}
+
+.form h4{
+  font-weight: bold;
+}
+.form input,
+.form textarea{
+  width: 100%;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.form label{
+  font-weight: bold;
+  margin-top: 9px;
+  margin-bottom: 5px;
+}
+
+.form input[type=submit]{
+  background-color: rgba(148, 134, 100, 0.651);
+  transition: 0.2s ease;
+  color: white;
+  border: none;
+}
+
+.form input[type=submit]:hover{
+  background-color: white;
+  color: black;
+  transition: 0.2s ease;
+}
+.row{
+  --bs-gutter-x: 0!important;
+}

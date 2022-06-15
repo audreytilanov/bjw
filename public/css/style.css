@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    font-family: EB Garamond;
+    overflow: hidden;
+}
+.test{
+    position: absolute;
+    z-index: 5;
+    top: 70vh;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    height: 100px;
+    width: 200px;
+}
+
+.test #navbar {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 25px;
+    background-color: rgba(78,148,79,255);
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.637);    
+    transition: 0.2s;
+    color: rgb(255, 255, 255);
+}
+
+.test #navbar:hover {
+    background-color: rgba(61,68,28,255);
+    transition: 0.2s;
+}
+
+.box{
+    width: 0%;
+    background-color: black;
+    height: 100vh;
+    transition:all 1s;
+    position: absolute;
+}
+
+.largeWidth{
+    width:100%;
+    z-index: 3;
+    transition:all 1s;
+}
+
+#main{
+    height: 100vh;
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    z-index: -1;
+    background: lightblue url("../user/assets/Aset Latar/latar homepage-01.png") no-repeat fixed center;
+    background-size: cover;
+}
+
+#main img{
+    width:50vw; 
+    height:auto; 
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 99;
+    background: rgba(234,240,193,255);
+}
+
+.menu a{
+    margin: 0 50px 0 50px;
+    z-index: 99;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 50px;
+    color: rgba(77,149,78,255);
+}
+
+.menu .comp-hover a{
+    margin: 0 10px 0 10px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(77,149,78,255);
+}
+
+.menu a:hover{
+    color: black;
+    transition: 0.2s;
+}
+
+.menu .comp-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .comp-container .comp{
+    padding: 20 0 20 0;
+
+}
+
+/* .menu .comp-container .comp-hover{
+    transition: 0.2s;
+    display: block;
+    height: 0;
+} */
+
+/* .menu .comp-container .comp:hover + .comp-hover{
+    transition: 0.2s;
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+} */
+
+@media (max-width: 1192px) {
+    .menu a {
+        margin: 0 50px 0 50px;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .menu a {
+        margin: 0 40px 0 40px;
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 877px) {
+    .menu a {
+        margin: 0 30px 0 30px;
+        font-size: 29px;
+    }
+
+    #main img{
+        width:80vw; 
+        height:auto; 
+    }
+}
+
+@media (max-width: 700px) {
+    .menu a {
+        margin: 0 20px 0 20px;
+        font-size: 25px;
+    }
+
+    #main img{
+        width:80vw; 
+        height:auto; 
+    }
+}
+
+@media (max-width: 550px) {
+    .menu{
+        flex-direction: column;
+    }
+
+    .menu .comp-hover a{
+        margin: 0 10px 0 10px;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        font-size: 17px;
+        color: rgba(77,149,78,255);
+    }
+    
+
+    .menu a {
+        margin: 30px 0 30px 0;
+        font-size: 25px;
+    }
+
+    .test #navbar {
+        font-size: 30px;
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
+    #main img{
+        width:100vw; 
+        height:auto; 
+    }
+
+    .test{
+        top: 85vh;
+    }
+
+    #main{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+        background: lightblue url("user/assets/Aset Latar/latar homepage-01.png") no-repeat fixed center;
+        background-size: cover;
+    }
+}
+
+
