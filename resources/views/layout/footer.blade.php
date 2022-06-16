@@ -9,7 +9,10 @@
                 <p>Jl. DR. Goris No.7, Dangin Puri Klod, Kec. Denpasar Tim., Kota Denpasar, Bali 80234</p>
                 
                 <h4>Akun Resmi</h4>
+                📱Kein: 081239006149<br>
+                📱Sukma: 085738633855<br><br>
                 <div class="social">
+                    
                     <a href="https://www.instagram.com/" target="blank">
                         <i class="fab fa-instagram fa-2x text-color-primary"></i>
                     </a><br>

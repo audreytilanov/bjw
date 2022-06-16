@@ -65,7 +65,7 @@ class FeatureController extends Controller
         ]);
 
         $message = 'Hai <b>'. $data->name.'!</b>';
-        $message = 'Terimakasih telah ikut berpartisipasi dalam perlombaan penulisan features Bali Journalist Week 2022. Anda telah terdaftar, dan berikut merupakan kode pengumpulan anda. Dimohon untuk tidak menyebarkan kode unik ini. Pengumpulan dilakukan pada tanggal 2 Agustus 2022.';
+        $message = 'Terimakasih telah ikut berpartisipasi dalam perlombaan penulisan features Bali Journalist Week 2022. Anda telah terdaftar, dan berikut merupakan kode pengumpulan anda. Dimohon untuk tidak menyebarkan kode unik ini. Pengumpulan dilakukan pada tanggal yang telah ditentukan.';
 
         $mail_data = [
             'recipient' => $data->email,
