@@ -39,7 +39,7 @@
                     <button class="btn btn-success" type="submit" name="submit" value="Download Guide Book" id="submit">Download Guide Book</button>
                 </form>
                 <br>
-                <p>Click picture to download.</p>
+                <p>Click the image to download.</p>
                 <section id="image-carousel" class="splide" aria-label="Beautiful Images">
                     <div class="splide__track">
                         <ul class="splide__list">
