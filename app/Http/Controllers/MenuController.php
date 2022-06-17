@@ -53,6 +53,30 @@ class MenuController extends Controller
         return Response::download($path);
     }
 
+    public function pamfletFeatures(){
+        // $filepath = Storage::disk('asset')->put('mininews_asset/proof_of_payment/'.$filename, file_get_contents('features_asset/proof_of_payment/'.$data->proof_of_payment));
+        $path = public_path()."/pamflet/features.png";
+        return Response::download($path);
+    }
+
+    public function pamfletVideos(){
+        // $filepath = Storage::disk('asset')->put('mininews_asset/proof_of_payment/'.$filename, file_get_contents('features_asset/proof_of_payment/'.$data->proof_of_payment));
+        $path = public_path()."/pamflet/videos.png";
+        return Response::download($path);
+    }
+
+    public function pamfletNewspaper(){
+        // $filepath = Storage::disk('asset')->put('mininews_asset/proof_of_payment/'.$filename, file_get_contents('features_asset/proof_of_payment/'.$data->proof_of_payment));
+        $path = public_path()."/pamflet/newspaper.png";
+        return Response::download($path);
+    }
+
+    public function pamfletNewsanchor(){
+        // $filepath = Storage::disk('asset')->put('mininews_asset/proof_of_payment/'.$filename, file_get_contents('features_asset/proof_of_payment/'.$data->proof_of_payment));
+        $path = public_path()."/pamflet/newsanchor.png";
+        return Response::download($path);
+    }
+
     public function featuresSubmit(Request $request){
         $request->validate([
             'name' => 'required',

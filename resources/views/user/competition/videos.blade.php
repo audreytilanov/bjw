@@ -20,8 +20,8 @@
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.0/venobox.min.css">
-    <style>
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/themes/splide-sea-green.min.css">
 </head>
 <body>
     <div id="loading">
@@ -39,12 +39,29 @@
                     <button class="btn btn-success" type="submit" name="submit" value="Download Guide Book" id="submit">Download Guide Book</button>
                 </form>
                 <br>
-                <form action="{{ route('user.pamflet') }}" method="POST">
-                    @csrf
-                    <div class="thumbnail">
-                        <input type="image" name="submit" src="{{ URL::asset('pamflet/pamflet.png') }}"/>
+                <p>Click picture to download.</p>
+                <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <form action="{{ route('user.pamflet') }}" method="POST">
+                                    @csrf
+                                    <div class="thumbnail">
+                                        <input type="image" name="submit" src="{{ URL::asset('pamflet/pamflet.png') }}"/>
+                                    </div>
+                                </form>
+                            </li>
+                            <li class="splide__slide">
+                                <form action="{{ route('user.pamflet.videos') }}" method="POST">
+                                    @csrf
+                                    <div class="thumbnail">
+                                        <input type="image" name="submit" src="{{ URL::asset('pamflet/videos.png') }}"/>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
                     </div>
-                </form>
+                </section>
             </div>
             <div class="desc">
                 <h3 style="text-align: center">Register Here</h3>

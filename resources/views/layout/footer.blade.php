@@ -54,4 +54,9 @@
         $('#loading').hide();
         }) 
     </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+    <script>
+        new Splide( '#image-carousel' , {
+            width: '1000px',
+        } ).mount();
+    </script>

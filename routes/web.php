@@ -28,6 +28,10 @@ Route::post('/features/submit', [MenuController::class, 'featuresSubmit'])->name
 
 Route::post('/guidebook/download', [MenuController::class, 'guidebook'])->name('user.guidebook');
 Route::post('/pamflet/download', [MenuController::class, 'pamflet'])->name('user.pamflet');
+Route::post('/pamflet/download/features', [MenuController::class, 'pamfletFeatures'])->name('user.pamflet.features');
+Route::post('/pamflet/download/videos', [MenuController::class, 'pamfletVideos'])->name('user.pamflet.videos');
+Route::post('/pamflet/download/newspaper', [MenuController::class, 'pamfletNewspaper'])->name('user.pamflet.newspaper');
+Route::post('/pamflet/download/newsanchor', [MenuController::class, 'pamfletNewsanchor'])->name('user.pamflet.newsanchor');
 
 Route::get('/news-anchor', [MenuController::class, 'newsanchors'])->name('user.newsanchor');
 Route::post('/news-anchor/submit', [MenuController::class, 'newsAnchorSubmit'])->name('user.newsanchor.submit');

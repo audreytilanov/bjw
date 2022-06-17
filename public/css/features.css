@@ -144,11 +144,12 @@ z-index: 100;
 
 #about #content .teaser{
     width: 40%;
+    
 }
 
 #about #content .teaser img,
 #about #content .teaser input[type=image]{
-    width:400px; 
+    width:350px; 
 }
 
 .teaser .thumbnail img,
@@ -276,6 +277,11 @@ input[type=submit]:hover{
         margin-top: 30px;
         text-align: center;
     }
+
+    #about #content .teaser img,
+    #about #content .teaser input[type=image]{
+        width:450px; 
+    }
 }
 
 @media (max-width: 710px) {
@@ -304,6 +310,11 @@ input[type=submit]:hover{
         font-size: 40px;
         text-align: center;
         margin-top: 30px;
+    }
+
+    #about #content .teaser img,
+    #about #content .teaser input[type=image]{
+        width:300px; 
     }
 }
 
@@ -344,7 +355,67 @@ input[type=submit]:hover{
         font-size: 40px;
         margin-top: 30px;
     }
+
+    #about #content .teaser img,
+    #about #content .teaser input[type=image]{
+        width:300px; 
+    }
+
+    #about #content .teaser{
+        width: 100%;
+        
+    }
 }
+
+@media (max-width: 410px) {
+   
+    #about .header{
+        height: 35px;
+        width: 100%;
+    }
+
+    #about #content{
+        margin-top: 0px;
+    }
+    
+    #about #content .teaser img{
+        width:300px; 
+    }
+
+    #about .header a{
+        font-size: 10px;
+    }
+
+    .dropbtn {
+        font-size: 10px;
+    }
+
+
+    #about h1{
+        font-size: 30px;
+    }
+
+    input[type=submit]{
+        width: 40%;
+    }
+
+    #about h3{
+        text-align: center;
+        font-size: 40px;
+        margin-top: 30px;
+    }
+
+    #about #content .teaser img,
+    #about #content .teaser input[type=image]{
+        width:250px; 
+    }
+
+    #about #content .teaser{
+        width: 100%;
+        
+    }
+}
+
 
 
 #footer{
