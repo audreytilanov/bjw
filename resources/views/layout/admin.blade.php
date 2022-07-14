@@ -55,18 +55,17 @@
                     <li><a href="{{ route('admin.seminar.index') }}"><i class="ti-mouse"></i> Seminar</a>
                     </li>
       
-                    {{-- <li class="label">Master Data</li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid3"></i> Master Data <span
-                                class="badge badge-primary">4</span> <span
+                    <li class="label">Pengumpulan</li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid3"></i> Pengumpulan <span
+                                class="badge badge-primary">3</span> <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="{{ route('admin.categories.index') }}"><i class="ti-harddrives"></i> Kategori Produk</a></li>
-                            <li><a href="{{ route('admin.couriers.index') }}"><i class="ti-car"></i> Kurir</a></li>
-                            <li><a href="{{ route('admin.province.index') }}"><i class="ti-flag-alt"></i> Provinsi</a></li>
-                            <li><a href="{{ route('admin.account.index') }}"><i class="ti-user"></i> Admin</a></li>
+                            <li><a href="{{ route('admin.pengumpulan.feature') }}"><i class="ti-car"></i> Feature</a></li>
+                            <li><a href="{{ route('admin.pengumpulan.newsanchor') }}"><i class="ti-flag-alt"></i> News Anchor</a></li>
+                            <li><a href="{{ route('admin.pengumpulan.video') }}"><i class="ti-user"></i> Video</a></li>
                         </ul>
                     </li>
-
+{{-- 
                     <li class="label">Pengadaan Barang</li>
                     <li><a href="{{ route('admin.product.index') }}"><i class="ti-bag"></i> Produk </a>
                     <li><a href="{{ route('admin.review.index') }}"><i class="ti-thumb-up"></i> Review Produk </a>

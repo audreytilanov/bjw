@@ -22,4 +22,8 @@ class Video extends Model
     public function groups(){
         return $this->hasMany(VideoTimDetail::class, 'video_id', 'id');
     }
+
+    public function videos(){
+        return $this->hasOne(VideoPengumpulan::class, 'video_id', 'id');
+    }
 }

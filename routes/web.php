@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\NewsAnchorController;
 use App\Http\Controllers\Admin\NewsPaperController;
 use App\Http\Controllers\Admin\VideosController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PengumpulanController;
 use App\Http\Controllers\SeminarController;
 
 /*
@@ -114,6 +115,13 @@ Route::prefix('superadmin')->name('admin.')->group(function(){
             Route::post('/accept/{id}',[SeminarController::class, 'accept'])->name('accept');
             Route::post('/decline/{id}',[SeminarController::class, 'decline'])->name('decline');
             Route::post('/delete/{id}',[SeminarController::class, 'delete'])->name('delete');
+        });
+
+        Route::prefix('pengumpulan')->name('pengumpulan.')->group(function(){
+            Route::get('/feature',[PengumpulanController::class, 'feature'])->name('feature');
+            Route::get('/file',[PengumpulanController::class, 'file'])->name('file');
+            Route::get('/newsachor',[PengumpulanController::class, 'newsanchor'])->name('newsanchor');
+            Route::get('/video',[PengumpulanController::class, 'video'])->name('video');
         });
     });
 });

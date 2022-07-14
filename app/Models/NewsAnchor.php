@@ -19,4 +19,8 @@ class NewsAnchor extends Model
         'ktm',
         'status'
     ];
+
+    public function newsanchors(){
+        return $this->hasOne(NewsAnchorPengumpulan::class, 'news_anchor_id', 'id');
+    }
 }
