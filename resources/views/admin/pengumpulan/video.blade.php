@@ -56,9 +56,9 @@
                                                     {{ $datas->videos->file }}
                                                 </td>
                                                 <td>
-                                                    @if($datas->features->status == "2")
+                                                    @if($datas->videos->status == "2")
                                                         Sudah Di Cek
-                                                    @elseif($datas->features->status == "1")
+                                                    @elseif($datas->videos->status == "1")
                                                         Belum Di Cek
                                                     @else
                                                         Belum Dikumpul
@@ -66,7 +66,7 @@
                                                 </td>
                                                 <td>{{ $datas->videos->updated_at }}</td>
                                                 <td>
-                                                    @if($datas->features->status == "1")
+                                                    @if($datas->videos->status == "1")
 
                                                         <form style="display: inline" action="{{ route('admin.pengumpulan.feature.accept', $datas->id) }}" id="delete-form-verify{{ $datas->id }}" method="POST">
                                                             @csrf
