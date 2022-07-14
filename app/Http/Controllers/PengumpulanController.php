@@ -58,7 +58,7 @@ class PengumpulanController extends Controller
         $data = Video::find($id);
 
         Log::create([
-            'aktivitas' => Auth::guard('web')->user()->name." Telah Menerima (Accept) ". $data->name . " | Pengumpulan Video",
+            'aktivitas' => Auth::guard('web')->user()->name." Telah Menerima (Accept) ". $data->group_name . " | Pengumpulan Video",
             'user_id' => Auth::guard('web')->user()->id,
         ]);
 
