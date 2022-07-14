@@ -56,7 +56,7 @@
                                                     {{ $datas->newsanchors->file }}
                                                 </td>
                                                 <td>
-                                                    @if($datas->newsanchor->status == "0")
+                                                    @if($datas->newsanchor->status == "2")
                                                         Sudah Di Cek
                                                     @else
                                                         Belum Di Cek

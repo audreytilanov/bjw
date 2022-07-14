@@ -56,7 +56,7 @@
                                                     {{ $datas->videos->file }}
                                                 </td>
                                                 <td>
-                                                    @if($datas->videos->status == "0")
+                                                    @if($datas->videos->status == "2")
                                                         Sudah Di Cek
                                                     @else
                                                         Belum Di Cek

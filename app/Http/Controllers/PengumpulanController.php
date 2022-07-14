@@ -31,7 +31,7 @@ class PengumpulanController extends Controller
         $find = FeaturePengumpulan::where('feature_id',$data->id)->first();
 
         $find->update([
-            'status' => "0"
+            'status' => "2"
         ]);
 
         toast('Peserta diterima :)','success');
@@ -65,7 +65,7 @@ class PengumpulanController extends Controller
         $find = VideoPengumpulan::where('video_id',$data->id)->first();
 
         $find->update([
-            'status' => "0"
+            'status' => "2"
         ]);
 
         toast('Peserta diterima :)','success');
@@ -89,7 +89,7 @@ class PengumpulanController extends Controller
         $find = NewsAnchorPengumpulan::where('news_anchor_id',$data->id)->first();
 
         $find->update([
-            'status' => "0"
+            'status' => "2"
         ]);
 
         toast('Peserta diterima :)','success');

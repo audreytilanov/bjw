@@ -60,10 +60,12 @@
                                                     </form>
                                                 </td>
                                                 <td>
-                                                    @if($datas->features->status == "0")
+                                                    @if($datas->features->status == "2")
                                                         Sudah Di Cek
-                                                    @else
+                                                    @elseif($datas->features->status == "1")
                                                         Belum Di Cek
+                                                    @else
+                                                        Belum Dikumpul
                                                     @endif
                                                 </td>
                                                 <td>{{ $datas->features->updated_at }}</td>
