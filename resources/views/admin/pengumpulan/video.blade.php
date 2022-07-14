@@ -56,18 +56,23 @@
                                                     {{ $datas->videos->file }}
                                                 </td>
                                                 <td>
-                                                    @if($datas->videos->status == "2")
+                                                    @if($datas->features->status == "2")
                                                         Sudah Di Cek
-                                                    @else
+                                                    @elseif($datas->features->status == "1")
                                                         Belum Di Cek
+                                                    @else
+                                                        Belum Dikumpul
                                                     @endif
                                                 </td>
                                                 <td>{{ $datas->videos->updated_at }}</td>
                                                 <td>
-                                                    <form style="display: inline" action="{{ route('admin.pengumpulan.feature.accept', $datas->id) }}" id="delete-form-verify{{ $datas->id }}" method="POST">
-                                                        @csrf
-                                                        <button value="{{ $datas->id }}" id="btn-submit-verify"  class="btn btn-success btn-flat btn-addon" type="submit">Tandai</button>
-                                                    </form>
+                                                    @if($datas->features->status == "1")
+
+                                                        <form style="display: inline" action="{{ route('admin.pengumpulan.feature.accept', $datas->id) }}" id="delete-form-verify{{ $datas->id }}" method="POST">
+                                                            @csrf
+                                                            <button value="{{ $datas->id }}" id="btn-submit-verify"  class="btn btn-success btn-flat btn-addon" type="submit">Tandai</button>
+                                                        </form>
+                                                    @endif
                                                 </td>
                                             </tr>
                                             @endforeach

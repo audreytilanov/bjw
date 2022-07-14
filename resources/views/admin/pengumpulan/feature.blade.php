@@ -70,10 +70,13 @@
                                                 </td>
                                                 <td>{{ $datas->features->updated_at }}</td>
                                                 <td>
+                                                    @if($datas->features->status == "1")
                                                     <form style="display: inline" action="{{ route('admin.pengumpulan.feature.accept', $datas->id) }}" id="delete-form-verify{{ $datas->id }}" method="POST">
                                                         @csrf
                                                         <button value="{{ $datas->id }}" id="btn-submit-verify"  class="btn btn-success btn-flat btn-addon" type="submit">Tandai</button>
                                                     </form>
+                                                    @endif
+                                                    
                                                 </td>
                                             </tr>
                                             @endforeach
