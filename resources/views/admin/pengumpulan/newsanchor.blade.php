@@ -42,6 +42,7 @@
                                                 <th>Nama</th>
                                                 <th>Email</th>
                                                 <th>File Pengumpulan</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -54,7 +55,20 @@
                                                 <td>
                                                     {{ $datas->newsanchors->file }}
                                                 </td>
+                                                <td>
+                                                    @if($datas->newsanchor->status == "0")
+                                                        Sudah Di Cek
+                                                    @else
+                                                        Belum Di Cek
+                                                    @endif
+                                                </td>
                                                 <td>{{ $datas->newsanchors->updated_at }}</td>
+                                                <td>
+                                                    <form style="display: inline" action="{{ route('admin.pengumpulan.feature.accept', $datas->id) }}" id="delete-form-verify{{ $datas->id }}" method="POST">
+                                                        @csrf
+                                                        <button value="{{ $datas->id }}" id="btn-submit-verify"  class="btn btn-success btn-flat btn-addon" type="submit">Tandai</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>

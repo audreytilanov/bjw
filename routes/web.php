@@ -119,9 +119,14 @@ Route::prefix('superadmin')->name('admin.')->group(function(){
 
         Route::prefix('pengumpulan')->name('pengumpulan.')->group(function(){
             Route::get('/feature',[PengumpulanController::class, 'feature'])->name('feature');
+            Route::post('/feature/accept/{id}',[PengumpulanController::class, 'featureAccept'])->name('feature.accept');
             Route::get('/file',[PengumpulanController::class, 'file'])->name('file');
             Route::get('/newsachor',[PengumpulanController::class, 'newsanchor'])->name('newsanchor');
+            Route::post('/newsanchor/accept/{id}',[PengumpulanController::class, 'newsAnchorAccept'])->name('newsanchor.accept');
+
             Route::get('/video',[PengumpulanController::class, 'video'])->name('video');
+            Route::post('/video/accept/{id}',[PengumpulanController::class, 'videoAccept'])->name('video.accept');
+
         });
     });
 });

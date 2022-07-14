@@ -42,6 +42,7 @@
                                                 <th>Nama</th>
                                                 <th>Email</th>
                                                 <th>File Pengumpulan</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -58,7 +59,20 @@
                                                         <input class="btn btn-primary" type="submit" name="submit" value="Download" id="submit">
                                                     </form>
                                                 </td>
+                                                <td>
+                                                    @if($datas->features->status == "0")
+                                                        Sudah Di Cek
+                                                    @else
+                                                        Belum Di Cek
+                                                    @endif
+                                                </td>
                                                 <td>{{ $datas->features->updated_at }}</td>
+                                                <td>
+                                                    <form style="display: inline" action="{{ route('admin.pengumpulan.feature.accept', $datas->id) }}" id="delete-form-verify{{ $datas->id }}" method="POST">
+                                                        @csrf
+                                                        <button value="{{ $datas->id }}" id="btn-submit-verify"  class="btn btn-success btn-flat btn-addon" type="submit">Tandai</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
