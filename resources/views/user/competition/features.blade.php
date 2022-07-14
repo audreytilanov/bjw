@@ -63,16 +63,9 @@
                 </section>
             </div>
             <div class="desc">
-                <h3 style="text-align: center">Register Here</h3>
-                <form action="{{ route('user.features.submit') }}" method="post" enctype="multipart/form-data" enctype="multipart/form-data">
+                <h3 style="text-align: center">Pengumpulan</h3>
+                <form action="{{ route('user.features.pengumpulan') }}" method="post" enctype="multipart/form-data" enctype="multipart/form-data">
                     @csrf
-                    <label for="name">Name*</label>
-                    <input type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required><br>
-                    @error('name')
-                        <span class="text-danger" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
                     <label for="email">Email*</label>
                     <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required><br>
                     @error('email')
@@ -80,41 +73,21 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    <label for="email">Phone*</label>
-                    <input type="number" name="phone" id="phone" placeholder="Phone" value="{{ old('phone') }}" required><br>
-                    @error('phone')
+                    <label for="originalitas">File Originalitas*</label>
+                    <input type="file" name="originalitas" id="originalitas" placeholder="originalitas" value="{{ old('originalitas') }}" required><br>
+                    @error('originalitas')
                         <span class="text-danger" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    <label for="institution">Institution*</label>
-                    <input type="text" name="institution" id="institution" value="{{ old('institution') }}" placeholder="Institution" required><br>
-                    @error('institution')
+                    <label for="pengumpulan">File Pengumpulan*</label>
+                    <input type="file" name="pengumpulan" id="pengumpulan" placeholder="Pengumpulan" value="{{ old('pengumpulan') }}" required><br>
+                    @error('pengumpulan')
                         <span class="text-danger" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    <label for="proof_of_payment">Proof of Payment*</label>
-                    <input type="file" name="proof_of_payment" id="proof_of_payment" placeholder="Proof of Payment" value="{{ old('proof_of_payment') }}" required><br>
-                    @error('proof_of_payment')
-                        <span class="text-danger" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                    <label for="line">ID Line*</label>
-                    <input type="text" name="line" id="line" value="{{ old('line') }}" placeholder="line" required><br>
-                    @error('line')
-                        <span class="text-danger" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                    <label for="ktm">KTM / KTP*</label>
-                    <input type="file" name="ktm" id="ktm" value="{{ old('ktm') }}" placeholder="Proof of Payment" required><br>
-                    @error('ktm')
-                        <span class="text-danger" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    
                     <input type="submit" name="submit" value="Submit">
                 </form>
             </div>

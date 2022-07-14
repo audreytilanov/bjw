@@ -32,9 +32,17 @@
     <div class="box">
         <div class="menu">
             <a href="{{ route('user.about') }}">About</a>
-            <a href="">Event</a>
             <div class="comp-container">
-                <a class="comp" href="">
+                <a class="comp" href="javaScript:void(0)">
+                    Event
+                </a>
+                <div class="comp-hover">
+                    <a href="{{ route('user.seminar') }}">Seminar</a>
+                    
+                </div>
+            </div>
+            <div class="comp-container">
+                <a class="comp" href="javaScript:void(0)">
                     Competition
                 </a>
                 <div class="comp-hover">

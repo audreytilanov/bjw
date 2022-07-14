@@ -19,4 +19,8 @@ class Feature extends Model
         'ktm',
         'status'
     ];
+
+    public function features(){
+        return $this->hasOne(FeaturePengumpulan::class, 'feature_id', 'id');
+    }
 }

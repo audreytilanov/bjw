@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\NewsAnchorController;
 use App\Http\Controllers\Admin\NewsPaperController;
 use App\Http\Controllers\Admin\VideosController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\SeminarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/email', [MenuController::class, 'email'])->name('user.email');
 Route::get('/about', [MenuController::class, 'about'])->name('user.about');
 Route::get('/feature', [MenuController::class, 'features'])->name('user.feature');
 Route::post('/features/submit', [MenuController::class, 'featuresSubmit'])->name('user.features.submit');
+Route::post('/features/pengumpulan', [MenuController::class, 'featuresPengumpulan'])->name('user.features.pengumpulan');
 
 Route::post('/guidebook/download', [MenuController::class, 'guidebook'])->name('user.guidebook');
 Route::post('/pamflet/download', [MenuController::class, 'pamflet'])->name('user.pamflet');
@@ -33,14 +35,25 @@ Route::post('/pamflet/download/videos', [MenuController::class, 'pamfletVideos']
 Route::post('/pamflet/download/newspaper', [MenuController::class, 'pamfletNewspaper'])->name('user.pamflet.newspaper');
 Route::post('/pamflet/download/newsanchor', [MenuController::class, 'pamfletNewsanchor'])->name('user.pamflet.newsanchor');
 
+Route::post('/pamflet/download/seminar', [MenuController::class, 'pamfletSeminar'])->name('user.pamflet.seminar');
+
+
+Route::get('/seminar', [MenuController::class, 'seminar'])->name('user.seminar');
+Route::post('/seminar/submit', [MenuController::class, 'seminarSubmit'])->name('user.seminar.submit');
+
 Route::get('/news-anchor', [MenuController::class, 'newsanchors'])->name('user.newsanchor');
 Route::post('/news-anchor/submit', [MenuController::class, 'newsAnchorSubmit'])->name('user.newsanchor.submit');
+Route::post('/news-anchor/pengumpulan', [MenuController::class, 'newsAnchorPengumpulan'])->name('user.newsanchor.pengumpulan');
+
 
 Route::get('/videos', [MenuController::class, 'video'])->name('user.video');
 Route::post('/videos/submit', [MenuController::class, 'videoSubmit'])->name('user.video.submit');
+Route::post('/videos/pengumpulan', [MenuController::class, 'videosPengumpulan'])->name('user.video.pengumpulan');
 
 Route::get('/mini-news-paper', [MenuController::class, 'miniNewsPaper'])->name('user.mininews');
 Route::post('/mini-news-paper/submit', [MenuController::class, 'miniNewsPaperSubmit'])->name('user.mininews.submit');
+Route::post('/mini-news-paper/pengumpulan', [MenuController::class, 'miniNewsPaperPengumpulan'])->name('user.mininews.pengumpulan');
+
 
 Route::prefix('superadmin')->name('admin.')->group(function(){
     Route::middleware(['guest:web'])->group(function(){
@@ -92,6 +105,15 @@ Route::prefix('superadmin')->name('admin.')->group(function(){
             Route::post('/accept/{id}',[NewsPaperController::class, 'accept'])->name('accept');
             Route::post('/decline/{id}',[NewsPaperController::class, 'decline'])->name('decline');
             Route::post('/delete/{id}',[NewsPaperController::class, 'delete'])->name('delete');
+        });
+
+        Route::prefix('seminar')->name('seminar.')->group(function(){
+            Route::get('/',[SeminarController::class, 'index'])->name('index');
+            Route::post('/download-pop/{id}',[SeminarController::class, 'downloadpop'])->name('pop');
+            Route::post('/download-ktm/{id}',[SeminarController::class, 'downloadktm'])->name('ktm');
+            Route::post('/accept/{id}',[SeminarController::class, 'accept'])->name('accept');
+            Route::post('/decline/{id}',[SeminarController::class, 'decline'])->name('decline');
+            Route::post('/delete/{id}',[SeminarController::class, 'delete'])->name('delete');
         });
     });
 });

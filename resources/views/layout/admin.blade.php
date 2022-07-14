@@ -52,6 +52,8 @@
                     </li>
                     <li><a href="{{ route('admin.newspaper.index') }}"><i class="ti-book"></i> Mini News Paper</a>
                     </li>
+                    <li><a href="{{ route('admin.seminar.index') }}"><i class="ti-mouse"></i> Seminar</a>
+                    </li>
       
                     {{-- <li class="label">Master Data</li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid3"></i> Master Data <span
