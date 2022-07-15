@@ -247,6 +247,11 @@ input[type=submit]:hover{
     text-align: center;
 }
 
+.contentPengumpulan{
+    width: 80%;
+    margin: auto;
+    
+}
 
 
 @media (max-width: 1150px) {
@@ -365,6 +370,10 @@ input[type=submit]:hover{
         width: 100%;
         
     }
+
+    .contentPengumpulan{
+        width: 80%;
+    }
 }
 
 @media (max-width: 410px) {
@@ -413,6 +422,10 @@ input[type=submit]:hover{
     #about #content .teaser{
         width: 100%;
         
+    }
+
+    .contentPengumpulan{
+        width: 80%;
     }
 }
 

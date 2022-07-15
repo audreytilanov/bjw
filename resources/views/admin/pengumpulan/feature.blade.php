@@ -76,7 +76,6 @@
                                                         <button value="{{ $datas->id }}" id="btn-submit-verify"  class="btn btn-success btn-flat btn-addon" type="submit">Tandai</button>
                                                     </form>
                                                     @endif
-                                                    
                                                 </td>
                                             </tr>
                                             @endforeach

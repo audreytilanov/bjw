@@ -30,7 +30,7 @@
         @include('layout.menu')
 
         <h2>Competition</h2>
-        <h1>Features</h1>
+        <h1>Seminar</h1>
         <div id="content">
             <div class="teaser">
                 <p>Click the image to download.</p>
