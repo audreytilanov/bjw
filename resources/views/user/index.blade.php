@@ -38,7 +38,7 @@
                 </a>
                 <div class="comp-hover">
                     <a href="{{ route('user.seminar') }}">Seminar</a>
-                    
+                    <a href="{{ route('user.pjtln') }}">PJTLN</a>
                 </div>
             </div>
             <div class="comp-container">
