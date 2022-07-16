@@ -30,20 +30,25 @@
         @include('layout.menu')
 
         <h2>Event</h2>
-        <h1>Seminar</h1>
+        <h1>PJTLN</h1>
         <div id="content">
             <div class="teaser">
+                <form action="{{ route('user.guidebook.pjtln') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-success" type="submit" name="submit" value="Download Guide Book" id="submit">Download Guide Book</button>
+                </form>
+                <br>
                 <p>Click the image to download.</p>
-                <form action="{{ route('user.pamflet.seminar') }}" method="POST">
+                <form action="{{ route('user.pamflet.pjtln') }}" method="POST">
                     @csrf
                     <div class="thumbnail">
-                        <input type="image" name="submit" src="{{ URL::asset('pamflet/seminar.png') }}"/>
+                        <input type="image" name="submit" src="{{ URL::asset('pamflet/pjtln.png') }}"/>
                     </div>
                 </form>
             </div>
             <div class="desc">
                 <h3 style="text-align: center">Register Here</h3>
-                <form action="{{ route('user.seminar.submit') }}" method="post" enctype="multipart/form-data" enctype="multipart/form-data">
+                <form action="{{ route('user.pjtln.submit') }}" method="post" enctype="multipart/form-data" enctype="multipart/form-data">
                     @csrf
                     <label for="name">Name*</label>
                     <input type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required><br>

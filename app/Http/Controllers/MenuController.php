@@ -15,6 +15,7 @@ use App\Models\FeaturePengumpulan;
 use App\Models\NewsAnchorPengumpulan;
 use App\Models\NewsPaperPengumpulan;
 use App\Models\NewsPaperTimDetail;
+use App\Models\Pjtln;
 use App\Models\VideoPengumpulan;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
@@ -50,9 +51,19 @@ class MenuController extends Controller
         return view('user.event.seminar');
     }
 
+    public function pjtln(){
+        return view('user.event.pjtln');
+    }
+
     public function guidebook(){
         // $filepath = Storage::disk('asset')->put('mininews_asset/proof_of_payment/'.$filename, file_get_contents('features_asset/proof_of_payment/'.$data->proof_of_payment));
         $path = public_path()."/guidebook/bukupedoman_bjw2022.pdf";
+        return Response::download($path);
+    }
+
+    public function guidebookPjtln(){
+        // $filepath = Storage::disk('asset')->put('mininews_asset/proof_of_payment/'.$filename, file_get_contents('features_asset/proof_of_payment/'.$data->proof_of_payment));
+        $path = public_path()."/guidebook/guidebook_pjtln.pdf";
         return Response::download($path);
     }
 
@@ -89,6 +100,12 @@ class MenuController extends Controller
     public function pamfletSeminar(){
         // $filepath = Storage::disk('asset')->put('mininews_asset/proof_of_payment/'.$filename, file_get_contents('features_asset/proof_of_payment/'.$data->proof_of_payment));
         $path = public_path()."/pamflet/seminar.png";
+        return Response::download($path);
+    }
+
+    public function pamfletPjtln(){
+        // $filepath = Storage::disk('asset')->put('mininews_asset/proof_of_payment/'.$filename, file_get_contents('features_asset/proof_of_payment/'.$data->proof_of_payment));
+        $path = public_path()."/pamflet/pjtln.png";
         return Response::download($path);
     }
 
@@ -462,6 +479,47 @@ class MenuController extends Controller
         }else{
             toast('Something Went Wrong, Please Try Again.','error');
             return redirect()->route('user.seminar');
+        }
+    }
+
+    public function pjtlnSubmit(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email'=> 'required|email|unique:pjtlns,email',
+            'phone'=> 'required',
+            'institution'=> 'required',
+            'proof_of_payment'=> 'required|file|max:3000',
+            'line'=> 'required',
+        ]);
+
+        $request->only(
+            'name',
+            'email',
+            'phone',
+            'institution',
+            'proof_of_payment',
+            'line'
+        );
+
+        $filename = $request->name."_".$request->proof_of_payment->getClientOriginalName();
+        $file = $request->file('proof_of_payment');
+        Storage::disk('asset')->put('pjtln_asset/proof_of_payment/'.$filename, file_get_contents($file));
+
+        $send = Pjtln::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'institution' => $request->institution,
+            'proof_of_payment' => $filename,
+            'line' => $request->line,
+        ]);
+
+        if($send){
+            toast('Data Submitted! Thank You For Participating.','success');
+            return redirect()->route('user.pjtln');
+        }else{
+            toast('Something Went Wrong, Please Try Again.','error');
+            return redirect()->route('user.pjtln');
         }
     }
 }

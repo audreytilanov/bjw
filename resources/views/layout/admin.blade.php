@@ -54,6 +54,8 @@
                     </li>
                     <li><a href="{{ route('admin.seminar.index') }}"><i class="ti-mouse"></i> Seminar</a>
                     </li>
+                    <li><a href="{{ route('admin.pjtln.index') }}"><i class="ti-video-clapper"></i> PJTLN</a>
+                    </li>
       
                     <li class="label">Pengumpulan</li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid3"></i> Pengumpulan <span

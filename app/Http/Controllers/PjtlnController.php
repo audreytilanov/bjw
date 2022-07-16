@@ -3,40 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\Models\Log;
-use App\Models\Seminar;
+use App\Models\Pjtln;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
 
-class SeminarController extends Controller
+class PjtlnController extends Controller
 {
     public function __construct(){
         $this->middleware('auth:web');
     }
     
     public function index(){
-        $data = Seminar::all();
-        return view('admin.seminar.index', compact('data'));
+        $data = Pjtln::all();
+        return view('admin.pjtln.index', compact('data'));
     }
 
     public function downloadpop($id){
-        $data = Seminar::find($id);
+        $data = Pjtln::find($id);
         Log::create([
-            'aktivitas' => Auth::guard('web')->user()->name." Telah Mendownload PoP ". $data->name . " | Seminar",
+            'aktivitas' => Auth::guard('web')->user()->name." Telah Mendownload PoP ". $data->name . " | PJTLN",
             'user_id' => Auth::guard('web')->user()->id,
         ]);
-        $path = public_path()."/seminar_asset/proof_of_payment/".$data->proof_of_payment;
+        $path = public_path()."/pjtln_asset/proof_of_payment/".$data->proof_of_payment;
         return Response::download($path);
     }
 
     
     public function accept($id){
-        $data = Seminar::find($id);
+        $data = Pjtln::find($id);
 
         Log::create([
-            'aktivitas' => Auth::guard('web')->user()->name." Telah Menerima (Accept) ". $data->name . " | Seminar",
+            'aktivitas' => Auth::guard('web')->user()->name." Telah Menerima (Accept) ". $data->name . " | PJTLN",
             'user_id' => Auth::guard('web')->user()->id,
         ]);
 
@@ -50,7 +50,7 @@ class SeminarController extends Controller
     }
 
     public function decline($id, Request $request){
-        $data = Seminar::find($id);
+        $data = Pjtln::find($id);
 
        
         $request->validate([
@@ -66,7 +66,7 @@ class SeminarController extends Controller
         ]);
 
         Log::create([
-            'aktivitas' => Auth::guard('web')->user()->name." Telah Menolak (Decline) ". $data->name . " dengan alasan ".$request->alasan." | Seminar",
+            'aktivitas' => Auth::guard('web')->user()->name." Telah Menolak (Decline) ". $data->name . " dengan alasan ".$request->alasan." | PJTLN",
             'user_id' => Auth::guard('web')->user()->id,
         ]);
 
@@ -75,21 +75,20 @@ class SeminarController extends Controller
     }
 
     public function delete($id){
-        $data = Seminar::find($id);
+        $data = Pjtln::find($id);
 
         $data->update([
             'status' => 'deleted'
         ]);
 
         Log::create([
-            'aktivitas' => Auth::guard('web')->user()->name." Telah Menghapus Data Image". $data->name . " | Features",
+            'aktivitas' => Auth::guard('web')->user()->name." Telah Menghapus Data Image ". $data->name . " | PJTLN",
             'user_id' => Auth::guard('web')->user()->id,
         ]);
 
-        Storage::disk('asset')->delete('seminar_asset/proof_of_payment/'.$data->proof_of_payment);
-        Storage::disk('asset')->delete('seminar_asset/ktm/'.$data->ktm);
+        Storage::disk('asset')->delete('pjtln_asset/proof_of_payment/'.$data->proof_of_payment);
 
         toast('Image berhasil dihapus','success');
-        return redirect()->route('admin.seminar.index');
+        return redirect()->route('admin.pjtln.index');
     }
 }

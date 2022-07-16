@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\NewsPaperController;
 use App\Http\Controllers\Admin\VideosController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PengumpulanController;
+use App\Http\Controllers\PjtlnController;
 use App\Http\Controllers\SeminarController;
 
 /*
@@ -37,10 +38,15 @@ Route::post('/pamflet/download/newspaper', [MenuController::class, 'pamfletNewsp
 Route::post('/pamflet/download/newsanchor', [MenuController::class, 'pamfletNewsanchor'])->name('user.pamflet.newsanchor');
 
 Route::post('/pamflet/download/seminar', [MenuController::class, 'pamfletSeminar'])->name('user.pamflet.seminar');
+Route::post('/pamflet/download/pjtln', [MenuController::class, 'pamfletPjtln'])->name('user.pamflet.pjtln');
 
+Route::post('/guidebook/download/pjtln', [MenuController::class, 'guidebookPjtln'])->name('user.guidebook.pjtln');
 
 Route::get('/seminar', [MenuController::class, 'seminar'])->name('user.seminar');
 Route::post('/seminar/submit', [MenuController::class, 'seminarSubmit'])->name('user.seminar.submit');
+
+Route::get('/pjtln', [MenuController::class, 'pjtln'])->name('user.pjtln');
+Route::post('/pjtln/submit', [MenuController::class, 'pjtlnSubmit'])->name('user.pjtln.submit');
 
 Route::get('/news-anchor', [MenuController::class, 'newsanchors'])->name('user.newsanchor');
 Route::post('/news-anchor/submit', [MenuController::class, 'newsAnchorSubmit'])->name('user.newsanchor.submit');
@@ -115,6 +121,15 @@ Route::prefix('superadmin')->name('admin.')->group(function(){
             Route::post('/accept/{id}',[SeminarController::class, 'accept'])->name('accept');
             Route::post('/decline/{id}',[SeminarController::class, 'decline'])->name('decline');
             Route::post('/delete/{id}',[SeminarController::class, 'delete'])->name('delete');
+        });
+
+        Route::prefix('pjtln')->name('pjtln.')->group(function(){
+            Route::get('/',[PjtlnController::class, 'index'])->name('index');
+            Route::post('/download-pop/{id}',[PjtlnController::class, 'downloadpop'])->name('pop');
+            Route::post('/download-ktm/{id}',[PjtlnController::class, 'downloadktm'])->name('ktm');
+            Route::post('/accept/{id}',[PjtlnController::class, 'accept'])->name('accept');
+            Route::post('/decline/{id}',[PjtlnController::class, 'decline'])->name('decline');
+            Route::post('/delete/{id}',[PjtlnController::class, 'delete'])->name('delete');
         });
 
         Route::prefix('pengumpulan')->name('pengumpulan.')->group(function(){
