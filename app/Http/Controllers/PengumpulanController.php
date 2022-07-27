@@ -55,7 +55,7 @@ class PengumpulanController extends Controller
             'aktivitas' => Auth::guard('web')->user()->name." Telah Mendownload Feature Pengumpulan Originalitas ". $data->name . " | Pengumpulan",
             'user_id' => Auth::guard('web')->user()->id,
         ]);
-        $path = public_path()."/features_asset/pengumpulan/".$data->features->originalitas;
+        $path = public_path()."/features_asset/originalitas/".$data->features->originalitas;
         return Response::download($path);
     }
     
