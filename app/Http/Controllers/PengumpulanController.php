@@ -49,6 +49,17 @@ class PengumpulanController extends Controller
         return Response::download($path);
     }
 
+    public function fileoriginalitas($id){
+        $data = Feature::find($id);
+        Log::create([
+            'aktivitas' => Auth::guard('web')->user()->name." Telah Mendownload Feature Pengumpulan Originalitas ". $data->name . " | Pengumpulan",
+            'user_id' => Auth::guard('web')->user()->id,
+        ]);
+        $path = public_path()."/features_asset/pengumpulan/".$data->features->originalitas;
+        return Response::download($path);
+    }
+    
+
     public function video(){
         $data = Video::has('videos')->get();
         return view('admin.pengumpulan.video', compact('data'));

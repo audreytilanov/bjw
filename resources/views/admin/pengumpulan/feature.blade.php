@@ -42,6 +42,7 @@
                                                 <th>Nama</th>
                                                 <th>Email</th>
                                                 <th>File Pengumpulan</th>
+                                                <th>Originalitas</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
@@ -55,6 +56,12 @@
                                                 <td>
                                                     <img src="{{ URL::asset('features_asset/pengumpulan/'.$datas->features->file) }}" alt="" width="100px">
                                                     <form action="{{ route('admin.pengumpulan.file', $datas->id) }}" method="POST">
+                                                        @csrf
+                                                        <input class="btn btn-primary" type="submit" name="submit" value="Download" id="submit">
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <form action="{{ route('admin.pengumpulan.fileoriginalitas', $datas->id) }}" method="POST">
                                                         @csrf
                                                         <input class="btn btn-primary" type="submit" name="submit" value="Download" id="submit">
                                                     </form>

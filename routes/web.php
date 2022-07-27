@@ -136,6 +136,7 @@ Route::prefix('superadmin')->name('admin.')->group(function(){
             Route::get('/feature',[PengumpulanController::class, 'feature'])->name('feature');
             Route::post('/feature/accept/{id}',[PengumpulanController::class, 'featureAccept'])->name('feature.accept');
             Route::post('/file/{id}',[PengumpulanController::class, 'file'])->name('file');
+            Route::post('/fileoriginalitas/{id}',[PengumpulanController::class, 'fileoriginalitas'])->name('fileoriginalitas');
             Route::get('/newsachor',[PengumpulanController::class, 'newsanchor'])->name('newsanchor');
             Route::post('/newsanchor/accept/{id}',[PengumpulanController::class, 'newsAnchorAccept'])->name('newsanchor.accept');
 
